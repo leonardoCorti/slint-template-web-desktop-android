@@ -16,6 +16,7 @@ release_windows: release_directory
 
 release_linux: release_directory
 	cargo b --release --target x86_64-unknown-linux-gnu
+	cp target/x86_64-unknown-linux-gnu/release/provapk release/
 
 release_directory: 
 	mkdir -p release
