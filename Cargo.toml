@@ -1,0 +1,23 @@
+[package]
+name = "provapk"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "provapk"      # Name of the binary
+path = "src/main.rs"          # Path to the main.rs file
+
+[target.'cfg(target_os = "android")']
+[target.'cfg(target_arch = "wasm32")']
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+slint = { version = "1.8", features = ["backend-android-activity-06"] }
+
+[build-dependencies]
+slint-build = "1.8"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-bindgen = { version = "0.2" }
+getrandom = { version = "0.2.2", features = ["js"] }
