@@ -6,6 +6,17 @@ export component AppWindow inherits Window {
     callback request-increase-value();
     callback request-decrease-value();
     VerticalBox {
+        TextInput {
+            accessible-role: AccessibleRole.button;
+            font-italic: false;
+            font-size: 30px;
+            horizontal-alignment: TextHorizontalAlignment.center;
+            read-only: true;
+            text: "Counter: \{root.counter}";
+            vertical-alignment: TextVerticalAlignment.bottom;
+            visible: true;
+            wrap: TextWrap.char-wrap;
+        }
         Text {
             accessible-role: AccessibleRole.button;
             font-italic: false;
